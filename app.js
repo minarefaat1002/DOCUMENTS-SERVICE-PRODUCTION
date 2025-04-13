@@ -23,7 +23,7 @@ app.use(morgan("combined", { stream: logger.stream })); // Log HTTP requests
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  max: 300, // Limit each IP to 100 requests per windowMs
 });
 app.use(limiter);
 app.use("/api/documents", documentRoutes);
