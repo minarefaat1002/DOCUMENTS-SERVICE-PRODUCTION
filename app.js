@@ -26,7 +26,7 @@ const limiter = rateLimit({
   max: 100, // Limit each IP to 100 requests per windowMs
 });
 app.use(limiter);
-app.use("/documents", documentRoutes);
+app.use("/api/documents", documentRoutes);
 // Health check endpoint
 app.get("/health", (req, res) => {
   res.status(200).json({ status: "OK" });
